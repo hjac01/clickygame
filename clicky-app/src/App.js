@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import MemoryCard from "./components/MemoryCard";
+import memories from "./memories.json";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  // Setting this.state.memories to the memories json array
+  state = {
+    memories
+  };
+
+  // Map over this.state.friends and render a FriendCard component for each friend object
+  render() {
+    return (
+      <Wrapper>
+        <Title>Clicky Game</Title>
+        {this.state.memories.map(memory => (
+          <FriendCard
+            id={memory.id}
+            key={memory.id}
+            image={memory.image}
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
 export default App;
