@@ -7,6 +7,9 @@ function MemoryCard(props) {
         <div className="img-container">
           <img alt={props.name} src={props.image} />
         </div>
+        <span onClick={() => props.clickMemory(props.id)} className="click">
+        𝘅
+      </span>
        </div>
     );
   }
