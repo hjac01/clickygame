@@ -3,7 +3,7 @@ import "./style.css";
 
 function Header (props){
     return(
-        <div class="header"><h1>Score:{props.score}</h1></div>
+        <div class="header"><h1>Clicky Game!!   Your Score: {props.score}</h1></div>
     )
 }
 
